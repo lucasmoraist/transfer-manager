@@ -1,3 +1,23 @@
 spring:
+  profiles:
+    active: ${PROFILE_ACTIVE:default}
   application:
     name: transfer-manager
+  cloud:
+    config:
+      fail-fast: true
+    stream:
+      bindings:
+        toProcessTransfer-in-0:
+          destination: payflow-exchange
+          content-type: application/json
+      rabbit:
+        bindings:
+          toProcessTransfer-out-0:
+            producer:
+              transactional: true
+              routing-key-expression: headers.walletRoutingKey
+
+logging:
+  level:
+    com.lucasmoraist: ${LOG_LEVEL:DEBUG}
