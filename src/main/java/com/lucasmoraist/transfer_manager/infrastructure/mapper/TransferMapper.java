@@ -15,6 +15,7 @@ public final class TransferMapper {
                 transfer.payee(),
                 transfer.amount(),
                 transfer.status(),
+                transfer.statusReason(),
                 transfer.createdAt(),
                 transfer.processedAt()
         );
@@ -27,6 +28,7 @@ public final class TransferMapper {
                 entity.getPayee(),
                 entity.getAmount(),
                 entity.getStatus(),
+                entity.getStatusReason(),
                 entity.getCreatedAt(),
                 entity.getProcessedAt()
         );

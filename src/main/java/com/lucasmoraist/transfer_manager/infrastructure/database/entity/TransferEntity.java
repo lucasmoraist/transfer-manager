@@ -26,6 +26,7 @@ public class TransferEntity {
     private Payee payee;
     private BigDecimal amount;
     private PaymentStatus status;
+    private String statusReason;
     private LocalDateTime createdAt;
     private LocalDateTime processedAt;
 

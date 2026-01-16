@@ -11,6 +11,7 @@ public record PaymentMessage(
         Payee payee,
         BigDecimal amount,
         PaymentStatus status,
+        String statusReason,
         LocalDateTime createdAt,
         Payflow payflow
 ) {

@@ -40,6 +40,7 @@ public class ExecuteTransferCase {
                 payee,
                 amount,
                 PaymentStatus.PENDING,
+                "",
                 LocalDateTime.now(),
                 null
         );
@@ -52,6 +53,7 @@ public class ExecuteTransferCase {
                 payee,
                 amount,
                 PaymentStatus.PENDING,
+                "",
                 transferSaved.createdAt(),
                 new Payflow(TraceId.fromTodayAndUuid(transferSaved.id()))
         );

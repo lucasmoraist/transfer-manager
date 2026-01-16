@@ -34,6 +34,10 @@ public class TransferPersistenceImpl implements TransferPersistence {
         entity.setStatus(paymentMessage.status());
         entity.setProcessedAt(LocalDateTime.now());
 
+        if (!paymentMessage.statusReason().isBlank()) {
+            entity.setStatusReason(paymentMessage.statusReason());
+        }
+
         this.transferRepository.save(entity);
     }
 
