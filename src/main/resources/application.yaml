@@ -11,12 +11,28 @@ spring:
         toProcessTransfer-out-0:
           destination: payflow-exchange
           content-type: application/json
+        fromWalletProcessed-in-0:
+          destination: payflow-exchange
+          group: ${spring.application.name}
+          content-type: application/json
+          consumer:
+            concurrency: 5
+            max-attempts: 3
+            back-off-initial-interval: 300
+            back-off-multiplier: 2.0
       rabbit:
         bindings:
           toProcessTransfer-out-0:
             producer:
               transactional: true
               routing-key-expression: headers.walletRoutingKey
+          fromWalletProcessed-in-0:
+            consumer:
+              binding-routing-key: "transfer.success,transfer.failed"
+              binding-routing-key-delimiter: ","
+              auto-bind-dlq: false
+              republish-to-dlq: false
+              transactional: true
 
 logging:
   level:
