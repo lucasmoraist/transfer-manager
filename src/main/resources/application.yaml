@@ -8,7 +8,7 @@ spring:
       fail-fast: true
     stream:
       bindings:
-        toProcessTransfer-in-0:
+        toProcessTransfer-out-0:
           destination: payflow-exchange
           content-type: application/json
       rabbit:
@@ -21,3 +21,7 @@ spring:
 logging:
   level:
     com.lucasmoraist: ${LOG_LEVEL:DEBUG}
+
+secrets:
+  url:
+    wallet-core: ${WALLET_CORE_URL:http://localhost:8080}
