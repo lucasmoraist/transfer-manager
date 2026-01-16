@@ -1,3 +1,5 @@
+server:
+  port: 8083
 spring:
   rabbitmq:
     host: localhost
@@ -5,7 +7,5 @@ spring:
     username: guest
     password: guest
     virtual-host: /
-  data:
-    mongodb:
-      uri: mongodb://root:example@localhost:27017/admin
-      database: transfer_manager_db
+  mongodb:
+    uri: mongodb://root:example@localhost:27017/transfer_manager_db?authSource=admin
