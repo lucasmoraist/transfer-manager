@@ -1,4 +1,4 @@
-package com.lucasmoraist.transfer_manager.infrastructure.queue;
+package com.lucasmoraist.transfer_manager.infrastructure.queue.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

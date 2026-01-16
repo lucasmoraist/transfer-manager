@@ -2,7 +2,7 @@ package com.lucasmoraist.transfer_manager.infrastructure.message;
 
 import com.lucasmoraist.transfer_manager.application.gateway.MessageGateway;
 import com.lucasmoraist.transfer_manager.domain.message.PaymentMessage;
-import com.lucasmoraist.transfer_manager.infrastructure.queue.TransferProducer;
+import com.lucasmoraist.transfer_manager.infrastructure.queue.producer.TransferProducer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
