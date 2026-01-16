@@ -1,15 +1,16 @@
 package com.lucasmoraist.transfer_manager.domain.model;
 
 import com.lucasmoraist.transfer_manager.domain.enums.PaymentStatus;
+import com.lucasmoraist.transfer_manager.domain.message.Payee;
+import com.lucasmoraist.transfer_manager.domain.message.Payer;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public record Transfer(
-        UUID id,
-        UUID payerId,
-        UUID payeeId,
+        String id,
+        Payer payer,
+        Payee payee,
         BigDecimal amount,
         PaymentStatus status,
         LocalDateTime createdAt,
